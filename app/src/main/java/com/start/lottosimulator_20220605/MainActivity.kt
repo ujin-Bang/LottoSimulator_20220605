@@ -3,6 +3,7 @@ package com.start.lottosimulator_20220605
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import com.start.lottosimulator_20220605.databinding.ActivityMainBinding
 
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
     val mWinLottoNumArr = ArrayList<Int>()
+    lateinit var mLottoNumTxtList : ArrayList<TextView>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,13 +66,18 @@ class MainActivity : AppCompatActivity() {
         mWinLottoNumArr.sort()
 
 //        당첨 번호 6개 확인
-        for( num in mWinLottoNumArr){
-            Log.d("당첨번호",num.toString())
+
+        for(i in 0 until 6){
+
+//            텍스트뷰[i] = 당첨번호[i]
+            mLottoNumTxtList[i].text = mWinLottoNumArr[i].toString()
         }
 
     }
 
     fun setValues(){
+
+        mLottoNumTxtList = arrayListOf(binding.txtLottoNum1, binding.txtLottoNum2, binding.txtLottoNum3, binding.txtLottoNum4, binding.txtLottoNum5, binding.txtLottoNum6)
 
     }
 }
