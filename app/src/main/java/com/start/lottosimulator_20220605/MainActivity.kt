@@ -12,6 +12,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
     val mWinLottoNumArr = ArrayList<Int>()
+    var mBonusNum = 0
+
     lateinit var mLottoNumTxtList : ArrayList<TextView>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +31,29 @@ class MainActivity : AppCompatActivity() {
             makeLottoNumbers()
 
 //            보너스 번호 생성
+            makeBonusNum()
         }
 
+    }
+
+    fun makeBonusNum(){
+
+//        써도 되는 숫자가 나올때까지 무한반복
+        while (true){
+
+            val randomNum = (1..45).random()
+
+            val isDuplOk = !mWinLottoNumArr.contains(randomNum)
+
+            if(isDuplOk){
+                mBonusNum = randomNum
+                break
+            }
+
+        }
+
+//        보너스번호 텍스트뷰에 반영
+         binding.txtBonusNum.text = mBonusNum.toString()
     }
 
     fun makeLottoNumbers(){
