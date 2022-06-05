@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     var mBonusNum = 0
 
     lateinit var mLottoNumTxtList : ArrayList<TextView>
+    val mMyLottoNumArr = arrayListOf(5,17,26,30,36,42)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +33,29 @@ class MainActivity : AppCompatActivity() {
 
 //            보너스 번호 생성
             makeBonusNum()
+
+//            등수 판정
+            checkLottoRank()
         }
+
+    }
+
+    fun checkLottoRank(){
+
+//        내 숫자 6개가 -> 당첨번호 6개중 몇개나 맞췄는지?
+
+        var correctCount = 0
+
+        for ( myNum in mMyLottoNumArr ){
+
+//            맟췃는가? -> myNum이 당첨번호에 들어있는가?
+            if( mWinLottoNumArr.contains(myNum)){
+//                맞춪 갯수 증가
+                correctCount++
+            }
+        }
+
+        Log.d("맞춘 갯수", "${correctCount}개 맞춤")
 
     }
 
