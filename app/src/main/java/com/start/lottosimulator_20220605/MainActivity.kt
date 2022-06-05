@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                 mHandler.removeCallbacks(buyLottoRunnable)
 
                 isAutoNow = false
-                binding.btnBuyLotto.text = "자동 구매 재개"
+                binding.btnAutoBuyLotto.text = "자동 구매 재개"
             }
 
 
@@ -143,11 +143,14 @@ class MainActivity : AppCompatActivity() {
 
                     mEarnedMoney += 50000000
 
+                    mRankCountList[1]++
+
                     binding.txtRankCount2.text = "${mRankCountList[1]}회"
                 } else {
                     Log.d("등수", "3등")
 
                     mEarnedMoney += 2000000
+                    mRankCountList[2]++
                     binding.txtRankCount3.text = "${mRankCountList[2]}회"
 
                 }
@@ -155,18 +158,20 @@ class MainActivity : AppCompatActivity() {
             4 -> {
                 Log.d("등수", "4등")
                 mEarnedMoney += 50000
-
+                mRankCountList[3]++
                 binding.txtRankCount4.text = "${mRankCountList[3]}회"
 
             }
             3 -> {
                 Log.d("등수", "5등")
                 mUsedMoney -= 5000
+                mRankCountList[4]++
                 binding.txtRankCount5.text = "${mRankCountList[4]}회"
 
             }
             else -> {
                 Log.d("등수", "꽝")
+                mRankCountList[5]++
                 binding.txtRankCount6.text = "${mRankCountList[5]}회"
 
             }
