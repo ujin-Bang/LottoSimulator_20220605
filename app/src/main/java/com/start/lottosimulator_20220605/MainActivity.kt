@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var mLottoNumTxtList : ArrayList<TextView>
     val mMyLottoNumArr = arrayListOf(5,17,26,30,36,42)
 
+//    등수별 당첨 횟수 목록
+    val mRankCountList = arrayListOf(0,0,0,0,0,0)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
@@ -75,6 +78,10 @@ class MainActivity : AppCompatActivity() {
             6 -> {
                 Log.d("등수","1등입니다.")
                 mEarnedMoney += 5000000000
+
+                mRankCountList[0]++
+
+                binding.txtRankCount1.text = "${mRankCountList[0]}회"
             }
             5 -> {
 
@@ -84,24 +91,34 @@ class MainActivity : AppCompatActivity() {
                     Log.d("등수","2등")
 
                     mEarnedMoney += 50000000
+
+                    binding.txtRankCount2.text = "${mRankCountList[1]}회"
                 }
                 else {
                     Log.d("등수","3등")
 
                     mEarnedMoney += 2000000
+                    binding.txtRankCount3.text = "${mRankCountList[2]}회"
 
                 }
             }
             4 -> {
                 Log.d("등수", "4등")
                 mEarnedMoney += 50000
+
+                binding.txtRankCount4.text = "${mRankCountList[3]}회"
+
             }
             3 -> {
                 Log.d("등수","5등")
                 mUsedMoney -= 5000
+                binding.txtRankCount5.text = "${mRankCountList[4]}회"
+
             }
             else -> {
                 Log.d("등수","꽝")
+                binding.txtRankCount6.text = "${mRankCountList[5]}회"
+
             }
         }
 
