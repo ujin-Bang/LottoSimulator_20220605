@@ -32,6 +32,9 @@ class MainActivity : AppCompatActivity() {
     //    등수별 당첨 횟수 목록
     val mRankCountList = arrayListOf(0, 0, 0, 0, 0, 0)
 
+//    지금 자동 구매 중인가?
+    var isAutoNow = false
+
     //    할일을 관리하는 클래스
     lateinit var mHandler: Handler
 
@@ -66,8 +69,23 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnAutoBuyLotto.setOnClickListener {
 
+            if(!isAutoNow) {
+
 //            핸들러에게 할일을 등록 (로또 1장 구매)
-            mHandler.post(buyLottoRunnable)
+                mHandler.post(buyLottoRunnable)
+
+                isAutoNow = true
+                binding.btnAutoBuyLotto.text = "자동 구매 중단하기"
+            }
+            else{
+
+//                다음 구매 할일 제거.
+                mHandler.removeCallbacks(buyLottoRunnable)
+
+                isAutoNow = false
+                binding.btnBuyLotto.text = "자동 구매 재개"
+            }
+
 
         }
 
