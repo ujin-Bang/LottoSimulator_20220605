@@ -6,7 +6,156 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:padding="20dp"
         tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="당첨 번호"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+
+            <TextView
+                android:id="@+id/txtLottoNum1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\?"
+                android:textSize="20sp"/>
+
+            <TextView
+
+                android:id="@+id/txtLottoNum2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="\?"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/txtLottoNum3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\?"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
+
+
+            <TextView
+                android:id="@+id/txtLottoNum4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\?"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
+
+
+            <TextView
+                android:id="@+id/txtLottoNum5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\?"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"  />
+
+
+            <TextView
+
+                android:id="@+id/txtLottoNum6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\?"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
+
+
+
+            <TextView
+
+                android:id="@+id/txtBonusNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\?"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 입력번호"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="17"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="26"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="36"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"  />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="42"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnBuyLotto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="로또 한장 구매하기"/>
 
 
     </LinearLayout>
